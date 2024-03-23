@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view
 from .serializers import QuestionsSerializer
 from rest_framework import status
 from django.contrib.sessions.models import Session
+import uuid
 
 # Create your views here.
 
@@ -23,14 +24,17 @@ def create_session(request):
 
     if request.method == 'GET':
         question = "do you experience headaches?"
+        uid = uuid.uuid4
+        request.session['id'] = uid
         data = [{
             "question": question,
+            "session_id": request.session['id'],
+            "answer": -1,
         }]
 
-        request.session['questions'] = question
 
         res = QuestionsSerializer(data, many = "true").data
-        return Response(session_data)
+        return Response(res)
 
     if request.method == 'POST':
         serializer = QuestionsSerializer(data=request.data)
