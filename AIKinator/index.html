@@ -8,18 +8,34 @@
   </head>
   <body>
     <div id="app">
-    <div class="bg-gray-200 flex h-screen">
-        <div class="mx-auto mt-48 px-8 pt-6 pb-8 mb-4 flex flex-col">
-            <div class="mb-4">
+      <div class="sticky top-0 justify-center bg-gray-300 flex">
+        <div class="flex flex-row mx-auto w-full">
+          <h1 class="text-2xl text-center my-5 mx-2 basis-1/4">TruHacks24</h1>
+          <h1 class="text-4xl text-center my-5 basis-1/2">AI Kinator</h1>
+          <h1 class="text-2xl text-center my-5 basis-1/4">
+            <a href="/how.html">
+              How it works?
+            </a>
+          </h1>
+        </div>
+      </div>
+    <div class="bg-gray-200 mx-auto justify-center flex h-screen">
+        <div>
+          <image class = "mt-14 h-72 w-72" src = "ai_robot.png"/>
+        </div>
+        <div class="w-72 mt-10 px-8 pt-6 pb-8 mb-4 flex flex-col">
+            <div class="mb-4 w-100">
                 <label class="block text-grey-darker text-sm font-bold mb-2" for="question">
                     Question
                 </label>
-                <p id="question" class="shadow  w-full py-2 px-3 text-grey-darker leading-tight ">
+                <p id="question" class="w-100 py-2 px-3 text-grey-darker leading-tight ">
                     Do You Experience X? 
                 </p>
             </div>
             <ul id = "options">
             </ul>
+              <p id="prediction_text" class="w-full py-2 px-3 text-grey-darker leading-tight ">
+              </p>
            </div>
         </div>
       </div>
