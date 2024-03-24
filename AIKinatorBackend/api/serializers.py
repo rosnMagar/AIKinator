@@ -5,3 +5,5 @@ class QuestionsSerializer(serializers.Serializer):
     answer = serializers.FloatField()
     session_id = serializers.CharField()
 
+class AnswerSerializer(serializers.Serializer):
+    answer = serializers.FloatField(required=False)
